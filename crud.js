@@ -1,7 +1,7 @@
 let editbtn=document.getElementById("editbtn");
 editbtn.addEventListener('click',edit);
 
-let removebtn=document.getElementsById("removebtn");
+let removebtn=document.getElementById("removebtn");
 removebtn.addEventListener('click',removeChapter);
 
 
