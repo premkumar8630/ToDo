@@ -2,17 +2,18 @@ let editbtn=document.getElementById("editbtn");
 editbtn.addEventListener('click',edit);
 
 let removebtn=document.getElementById("removebtn");
-removebtn.addEventListener('click',removeChapter);
+removebtn.addEventListener('click',remove);
 
 
 let addBtn = document.getElementById('btnid')
         addBtn.addEventListener('click', addChapter)
+        //addBtn.addEventListener('KeyDown', addChapter)
 
         function addChapter(e) {
-            console.log("starting at function add done")
+            //console.log("starting at function add done")
             let currentBtn = e.currentTarget;
             let currentInput = document.getElementById('inputid');
-            console.log(currentInput.value)
+           // console.log(currentInput.value)
 
 
             let newline = document.createElement('li');
@@ -21,14 +22,14 @@ let addBtn = document.getElementById('btnid')
             let currentChapter = currentInput.value;
             newline.innerHTML = `<h3 class="flex-grow-1 ">${currentChapter}</h3> 
                         <button class="btn btn-warning mx-3" onclick="edit(this)">Edit</button>
-                        <button class="btn btn-danger" onclick="removeChapter(this)">remove</button>` //newline=newLi
+                        <button class="btn btn-danger" onclick="remove(this)">remove</button>` //newline=newLi
             let parentList = document.getElementById('parentListid')
             parentList.appendChild(newline);
-            console.log("at last of function")
+            //console.log("at last of function")
         }
 
-        function removeChapter(currentElement) {
-            console.log("inner remove")
+        function remove(currentElement) {
+           // console.log("inner remove")
             currentElement.parentElement.remove();
         }
 
@@ -38,7 +39,7 @@ let addBtn = document.getElementById('btnid')
                 let currentChapterName = currentElement.previousElementSibling.value
                 let curHeading = document.createElement('h3');
                 curHeading.className = "flex-grow"
-                curHeading.textContent = currentChapterName
+                curHeading.textContent = currentChapterName;
                 currentElement.parentElement.replaceChild(curHeading, currentElement.previousElementSibling)
 
 
