@@ -6,7 +6,7 @@ removebtn.addEventListener('click',remove);
 
 
 let addBtn = document.getElementById('btnid')
-        addBtn.addEventListener('click', addChapter)
+        addBtn.addEventListener('click', addChapter);
         //addBtn.addEventListener('KeyDown', addChapter)
 
         function addChapter(e) {
@@ -41,7 +41,8 @@ let addBtn = document.getElementById('btnid')
                 curHeading.className = "flex-grow"
                 curHeading.textContent = currentChapterName;
                 currentElement.parentElement.replaceChild(curHeading, currentElement.previousElementSibling)
-
+                //curHeading.parentElement.nextElementSibling.style.padding="0";
+                editbtn.parentElement.style.marginRight=0;
 
 
             } else {
@@ -54,6 +55,7 @@ let addBtn = document.getElementById('btnid')
                 currentInput.value = currentChapterName
                 currentElement.parentElement.replaceChild(currentInput, currentElement.previousElementSibling)
                 currentElement.textContent = "Done"
+                editbtn.parentElement.style.marginRight=0;
             }
 
 
